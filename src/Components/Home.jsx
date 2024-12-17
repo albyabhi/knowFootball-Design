@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import Appbar from './Home/Appbar';
-import SecondAppBar from './Home/SecondAppBar.JSX';
+import SecondAppBar from './Home/SecondAppBar';
 import Matches from './Home/matches/Matches';
 import Live from './Home/live/Live';
 import Table from './Home/Table/Table';
