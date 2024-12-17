@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['@mui/material/styles'], // Mark the module as external
+      external: ['@mui/material', '@emotion/react', '@emotion/styled'], // Externalize MUI and Emotion
     },
   },
 });
