@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, CardContent, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import brightonLogo from "../matches/Team logo/Brighton.png";
@@ -70,105 +69,104 @@ const Matches = () => {
         Matches
       </Typography>
       {matches.map((match) => (
-  <Box
-    key={match.matchNumber}
-    sx={{
-      mb: 2,
-      width: { xs: '95%', sm: '90%', md: '80%', lg: '60%' },
-      backgroundColor: theme.palette.primary.main,
-      borderRadius: '10px',
-      padding: { xs: 1, sm: 2, md: 3 },
-      mx: 'auto',
-    }}
-  >
-    <CardContent>
-      <Box
-        display="flex"
-        flexDirection={{ xs: 'column', sm: 'row' }}
-        alignItems="center"
-        justifyContent="space-between"
-      >
         <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          mb={{ xs: 1, sm: 0 }}
-          sx={{ width: { xs: '100%', sm: 'auto' } }}
-        >
-          <img
-            src={match.homeLogo}
-            alt={match.homeTeamName}
-            style={{ width: 50, height: 50, marginBottom: 4 }}
-          />
-          <Typography
-            color="text.primary"
-            noWrap
-            sx={{ width: { xs: '100%', sm: 150 }, textAlign: 'center' }}
-          >
-            {match.homeTeamName}
-          </Typography>
-        </Box>
-
-        <Box sx={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
-          <Typography variant="h6" color="text.primary" textAlign="center">
-            {match.score.home} - {match.score.away}
-          </Typography>
-        </Box>
-
-        <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          mb={{ xs: 1, sm: 0 }}
-          sx={{ width: { xs: '100%', sm: 'auto' } }}
-        >
-          <img
-            src={match.awayLogo}
-            alt={match.awayTeamName}
-            style={{ width: 50, height: 50, marginTop: 4 }}
-          />
-          <Typography
-            color="text.primary"
-            noWrap
-            sx={{ width: { xs: '100%', sm: 150 }, textAlign: 'center' }}
-          >
-            {match.awayTeamName}
-          </Typography>
-        </Box>
-      </Box>
-
-      {match.youtubeUrl && (
-        <Box
+          key={match.matchNumber}
           sx={{
-            position: 'relative',
-            paddingBottom: '56.25%',
-            height: 0,
-            overflow: 'hidden',
-            width: '100%',
-            mt: 2,
+            mb: 2,
+            width: { xs: '95%', sm: '90%', md: '80%', lg: '60%' },
+            backgroundColor: theme.palette.primary.main,
+            borderRadius: '10px',
+            padding: { xs: 1, sm: 2, md: 3 },
+            mx: 'auto',
           }}
         >
-          <iframe
-            src={match.youtubeUrl.replace('watch?v=', 'embed/')}
-            title={`Match ${match.matchNumber} Highlights`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              borderRadius: '10px',
-            }}
-          ></iframe>
-        </Box>
-      )}
-    </CardContent>
-  </Box>
-))}
+          <CardContent>
+            <Box
+              display="flex"
+              flexDirection={{ xs: 'column', sm: 'row' }}
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                mb={{ xs: 1, sm: 0 }}
+                sx={{ width: { xs: '100%', sm: 'auto' } }}
+              >
+                <img
+                  src={match.homeLogo}
+                  alt={match.homeTeamName}
+                  style={{ width: 50, height: 50, marginBottom: 4 }}
+                />
+                <Typography
+                  color="text.primary"
+                  noWrap
+                  sx={{ width: { xs: '100%', sm: 150 }, textAlign: 'center' }}
+                >
+                  {match.homeTeamName}
+                </Typography>
+              </Box>
 
+              <Box sx={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
+                <Typography variant="h6" color="text.primary" textAlign="center">
+                  {match.score.home} - {match.score.away}
+                </Typography>
+              </Box>
+
+              <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                mb={{ xs: 1, sm: 0 }}
+                sx={{ width: { xs: '100%', sm: 'auto' } }}
+              >
+                <img
+                  src={match.awayLogo}
+                  alt={match.awayTeamName}
+                  style={{ width: 50, height: 50, marginTop: 4 }}
+                />
+                <Typography
+                  color="text.primary"
+                  noWrap
+                  sx={{ width: { xs: '100%', sm: 150 }, textAlign: 'center' }}
+                >
+                  {match.awayTeamName}
+                </Typography>
+              </Box>
+            </Box>
+
+            {match.youtubeUrl && (
+              <Box
+                sx={{
+                  position: 'relative',
+                  paddingBottom: '56.25%',
+                  height: 0,
+                  overflow: 'hidden',
+                  width: '100%',
+                  mt: 2,
+                }}
+              >
+                <iframe
+                  src={match.youtubeUrl.replace('watch?v=', 'embed/')}
+                  title={`Match ${match.matchNumber} Highlights`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '10px',
+                  }}
+                ></iframe>
+              </Box>
+            )}
+          </CardContent>
+        </Box>
+      ))}
     </Box>
   );
 };

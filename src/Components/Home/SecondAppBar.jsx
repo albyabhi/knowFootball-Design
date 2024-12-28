@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { AppBar, Toolbar, Button, Box } from '@mui/material';
 
 const SecondAppBar = ({ onViewChange, selectedView }) => {
@@ -55,6 +55,12 @@ const SecondAppBar = ({ onViewChange, selectedView }) => {
       </AppBar>
     </Box>
   );
+};
+
+// Add PropTypes validation
+SecondAppBar.propTypes = {
+  onViewChange: PropTypes.func.isRequired,
+  selectedView: PropTypes.string.isRequired,
 };
 
 export default SecondAppBar;

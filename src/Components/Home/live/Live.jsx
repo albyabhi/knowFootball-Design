@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, CardContent, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import brightonLogo from "../matches/Team logo/Brighton.png";

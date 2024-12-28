@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import Appbar from './Home/Appbar';
@@ -8,7 +8,7 @@ import Live from './Home/live/Live';
 import Table from './Home/Table/Table';
 
 const Home = () => {
-  const theme = useTheme(); 
+  const theme = useTheme();
   const [selectedView, setSelectedView] = useState('matches'); // Default view is 'matches'
   
   const handleViewChange = (view) => {
@@ -28,7 +28,8 @@ const Home = () => {
         <Appbar />
       </Box>
       <Box>
-      <SecondAppBar onViewChange={handleViewChange} selectedView={selectedView} />      </Box>
+        <SecondAppBar onViewChange={handleViewChange} selectedView={selectedView} />
+      </Box>
       <Box mt={2}>
         {selectedView === 'matches' && <Matches />}
         {selectedView === 'live' && <Live />}
